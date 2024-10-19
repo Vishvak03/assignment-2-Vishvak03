@@ -71,7 +71,7 @@ public:
         }
 
         // Resize if load factor exceeds the threshold
-        double a= (currentSize) / tableSize; //load factor after adding one more element
+        double a = (static_cast<double>(currentSize))/(static_cast<double>(tableSize));
         if (a >= 0.8) {  //resize if adding the new element would make the load factor cross 0.8
             resizeTable();
         }
@@ -111,7 +111,7 @@ public:
             index = (hashFunction(key) + i * i) % tableSize;
 
             // Stop searching if we have completed one full loop
-            if (i >= tableSize) {
+            if (i >= (tableSize+1)/2) {
                 return -1;
             }
         }
