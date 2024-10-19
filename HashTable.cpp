@@ -146,30 +146,3 @@ public:
         cout << endl;
     }
 };
-
-
-int main() {
-    int initialSize = 7; 
-    HashTable ht(initialSize);
-
-    // Example test case
-    ht.insert(1);
-    ht.printTable();
-    ht.insert(2);
-    ht.printTable();
-    ht.insert(3);
-    ht.printTable(); 
-    ht.insert(4);
-    ht.printTable();
-    ht.insert(5);
-    ht.printTable();
-    ht.insert(6);  
-    ht.printTable(); 
-    ht.insert(7);  
-    ht.printTable(); 
-
-    int find = ht.search(22);
-    std::cout << "Found at:" << find << std::endl;
-
-    return 0;
-}
