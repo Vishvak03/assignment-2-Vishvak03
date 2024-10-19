@@ -1,19 +1,20 @@
-# Compiler
+# Specify the compiler
 CXX = g++
 CXXFLAGS = -std=c++11 -Wall
 
-# Target executable file
+# Target executable
 TARGET = main.out
 
 # Source files
-SRC = HashTable.cpp main.cpp
+SRC = main.cpp HashTable.cpp
 
-# Default rule to build the executable
+# Default build rule
 all: $(TARGET)
 
+# Rule to create the executable
 $(TARGET): $(SRC)
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRC)
 
-# Clean up generated files
+# Clean rule to remove the generated executable
 clean:
 	rm -f $(TARGET)
