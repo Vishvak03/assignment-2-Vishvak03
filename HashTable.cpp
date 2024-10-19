@@ -71,7 +71,7 @@ public:
         }
 
         // Resize if load factor exceeds the threshold
-        double a= (currentSize) / tableSize; //load factor after adding one more element
+        double a= (currentSize+1) / tableSize; //load factor after adding one more element
         if (a >= 0.8) {  //resize if adding the new element would make the load factor cross 0.8
             resizeTable();
         }
@@ -146,3 +146,30 @@ public:
         cout << endl;
     }
 };
+
+
+int main() {
+    int initialSize = 7; 
+    HashTable ht(initialSize);
+
+    // Example test case
+    ht.insert(1);
+    ht.printTable();
+    ht.insert(2);
+    ht.printTable();
+    ht.insert(3);
+    ht.printTable(); 
+    ht.insert(4);
+    ht.printTable();
+    ht.insert(5);
+    ht.printTable();
+    ht.insert(6);  
+    ht.printTable(); 
+    ht.insert(7);  
+    ht.printTable(); 
+
+    int find = ht.search(22);
+    std::cout << "Found at:" << find << std::endl;
+
+    return 0;
+}
