@@ -10,7 +10,6 @@ private:
     vector<bool> occupied;   // To track occupied positions
     int currentSize;         // Current number of elements in the table
     int tableSize;           // The size of the table
-    const double loadFactorThreshold = 0.8; // Load factor threshold
 
     // Helper function to check if a number is prime
     bool isPrime(int num) {
@@ -73,7 +72,7 @@ public:
 
         // Resize if load factor exceeds the threshold
         double a= (currentSize+1) / tableSize; //load factor after adding one more element
-        if (a >= loadFactorThreshold) {  //resize if adding the new element would make the load factor cross 0.8
+        if (a >= 0.8) {  //resize if adding the new element would make the load factor cross 0.8
             resizeTable();
         }
 
