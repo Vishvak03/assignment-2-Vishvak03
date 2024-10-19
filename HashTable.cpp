@@ -71,7 +71,7 @@ public:
         }
 
         // Resize if load factor exceeds the threshold
-        double a= (currentSize+1) / tableSize; //load factor after adding one more element
+        double a= (currentSize) / tableSize; //load factor after adding one more element
         if (a >= 0.8) {  //resize if adding the new element would make the load factor cross 0.8
             resizeTable();
         }
